@@ -41,7 +41,7 @@ var passusuario=$("#contra").val();
 	$( "#shake" ).effect( "shake",{distance: 10},2000,oculta);//hacermos el efecto shake
 	
 	}else{
-	$("dialogoemergente").submit();//lo enviamos a la página de php para que compruebe en el servidor si el usuario existe
+	$("#loginsusuario").submit();//lo enviamos a la página de php para que compruebe en el servidor si el usuario existe
 	}
 };
 /**

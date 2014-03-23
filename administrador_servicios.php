@@ -67,7 +67,18 @@
     <div>
         <div class="izquierdo">
             <p id="p" class="margen_izquierdo"><b><?php echo "Bienvenido ".@$_SESSION['user'];?></b></p>  
-            <p class="margen_izquierdo">Servicio: <b>Chocolaterapia</b></p>
+            <p class="margen_izquierdo">Servicio:
+            <select name="habitacion">
+           <option selected="selected">disponibles</option><!--para actualizar los datos del cliente añadir un if-->
+           <?php
+                include ('funcions_bdd.php');
+                $servicios=servicios();
+                for ($i=0;$i<count($servicios);$i++)
+                {
+                    echo "<option>".$servicios['$i']."</option>";
+                }
+           ?>
+   </select></p>
         </div>
         <div class="derecha">
             <p id="fechahoy"></p>
@@ -77,7 +88,6 @@
     <div class="cuerpo division">
         <div class="izquierdo2_3" id="listado_personas">
             <?php
-                include('funcions_bdd.php');
                 $hoy=date("Y-m-d");
                 llistar_reserves_dia_js($hoy);
             ?>
