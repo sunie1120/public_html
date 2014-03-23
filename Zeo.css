@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background:#E6E6D5}
+fieldset{border:6px solid #80B1B7;border-radius:180px; background:#C0D9C9; width: 30%}
+legend{font-weight:bold; color:#000000; background:#008080; border-radius:180px; border:solid white 6px}
+p{ color:#000000; font-family: Calibri}
+.boton{color:#CCCDBE; border:solid; color:#008080; border-radius:8px;background:#80B1B7; font-family: Calibri; font-weight:bold}
+.boton:hover{ background: #ddd;}
+form{font-family: Calibri}
+#servei {font-family: Calibri}
+h2{font-weight:bold; color:#000000; font-family: Calibri}
+#error {
+	color: #8C0103;
+	font-family: calibri;
+	font-size: small;
+	font-weight: bold;
+}

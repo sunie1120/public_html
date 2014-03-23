@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" lang="es">
+<title>Bienvenido Hotel JdH</title>
+<link href="css/hotel.css" rel="stylesheet" type="text/css">
+<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/hotel.js"></script>
+</head>
+
+<body>
+<header>
+<div id="header">
+
+    <a href="index.html"><img class="logo" src="imagenes/logo.png" alt="logo"/></a>
+
+<div class="navbar">
+    <div class="boton derecha">
+         <input type="button" value="Registrese" name='registrese'>
+         <input type="button" id="boton_dialogo" value="Acceda" onclick="muestra();"/>
+     </div>
+    <h1 class="boton titulohotel ">Hotel Joan d'Austria</h1>
+  
+     
+   <div id="arriba">   
+  <nav id="abajo">
+          <ul class="mi-menu">
+          <li><a href="index.html"> Inicio </a></li>
+          <li>
+            <a href="#"> Ofertas </a>
+          </li>
+          <li><a href="habitaciones.html"> Habitaciones </a>
+             <ul>
+              <li><a href="suites.html"> Suites </a></li>
+              <li><a href="triples.html"> Triples </a></li>
+              <li><a href="dobles.html"> Dobles </a></li>
+            </ul>
+
+          </li>
+          <li><a href="servicios.html"> Servicios </a></li>
+          <li><a href="eventos.html"> Eventos </a>
+            <ul>
+             <li><a href="reuniones.html"> Reuniones </a></li>
+             <li><a href="bodas.html"> Bodas </a>
+                <ul>
+                  <li><a href="presupuestos.html"> presupuestos </a></li>
+                  <li><a href="salones.html"> salones </a></li>
+                  <li><a href="menus.html"> menus </a></li>
+                </ul>
+             </li>
+            </ul>
+          </li>
+          <li><a href="rest.html"> Restauracion </a></li>
+          <li><a href="spa.html"> Spa </a></li>
+          <li><a href="llegar.html"> Como llegar </a></li>
+          <li><a href="contacto.html"> Contacto </a></li>
+        </ul>
+   </nav>     
+</div>
+</header>
+
+<section>
+    <aside class="izquierdo">
+        <div id="grupo1">
+            <div id="burbuja1"></div>
+            <div id="burbuja3"></div>
+            <div id="burbuja2"></div>
+        </div>
+	<div id="burbujagrande">
+            <div id="creservas">
+                <p align="center" id="texto">Reservas</p>
+            </div>
+            <div id="cajatexto" align="center">
+                <input type="text" name="nombredelacaja"/><br>
+                <input type="text" name="nombredelacaja"/>
+            </div>
+            <p id="texto" align="center">Numero de noches:</p>
+            <select id="select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+            </select>
+            <div id="reservar">
+                    <p align="center" id="texto">Reservas</p>
+            </div>
+	 </div>
+        <article>
+            <p id="resaltado">En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados.</p> 
+        </article>
+    </aside>
+    <!--dialogo emergente-->
+    <div id="dialogoemergente" title="Acceso de usuarios">
+        <div class='' id="shake" title="Acceso de usuarios">
+            <form action="valida.php" method="post" name="valida" id="loginsusuario">
+                <p>Usuario:</p>
+                <input type="text" name="user" id="user">
+                <p>Contrase&nacute;a:</p>
+		<input type="password" name="contra" id="contra">
+            </form>
+
+        </div>
+        <div id="errores"></div>
+    </div>
+    <!-- fin dialogo emergente-->
+	<div id="circulos">
+		 <div id="circulo4"></div>
+		 <div id="circulo1"></div>
+		 <div id="circulo3"></div>
+		 <div id="circulo2"></div>
+		 <div id="circulo5"></div>
+		 <div id="burbuja1"></div>
+	</div>
+    
+    <div class="centro">
+	<!-- pestañas servicios-->
+        aqui hay cosas
+	<!-- fin pestañas servicios-->
+    </div>
+    
+
+
+
+</section>
+
+<footer>
+    <div id=redes><a href="">
+      <img src="imagenes/facebook.png" width="25" height="25" alt="facebook"/></a>
+      <a href=""><img src="imagenes/twitter.png" width="25" height="25" alt="twiter"/></a>
+      <a href=""><img src="imagenes/google+.png" width="25" height="25" alt="google +"/></a>
+      <a href=""><img src="imagenes/rss.png" width="25" height="25" alt="rss"/></a>
+      </div>
+    <div id=info>
+	<p>Hotel Spa Joan d'Austria<br> Parque Nacional de la Selva de Mar, km 211.</p>
+        <p><a href="">Terminos</a></p>
+        <p><a href="">Mapa</a></p>
+        <p> Hotel Spa Joan</p>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>

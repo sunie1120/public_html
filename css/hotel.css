@@ -1,0 +1,774 @@
+@charset "utf-8";
+/*@author Olaia*/
+html {
+	height:100%;
+	padding-top:1.5%;
+background: -webkit-linear-gradient(rgba(64,127,127,1.00), rgba(185,185,185,1.00),rgba(64,127,127,1.00)); /* For Safari */
+background: -o-linear-gradient(rgba(64,127,127,1.00), rgba(185,185,185,1.00),rgba(64,127,127,1.00)); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(rgba(64,127,127,1.00), rgba(185,185,185,1.00)); /* For Firefox 3.6 to 15 */
+background: linear-gradient(rgba(64,127,127,1.00), rgba(185,185,185,1.00),rgba(64,127,127,1.00)); /* Standard syntax (must be last) */
+}
+
+body {
+	width: 80%;
+	/*height: 100%;*/
+	/*margin-top: 50px;*/
+	/*margin-bottom: autopx;*/
+	padding-top: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #000000;
+	font-family: calibri;
+	border-spacing: 0px 0px;
+	border-radius: 50px;
+	background-color: #E6E6D5;
+	position: static;
+	margin: 0 auto;
+	left: auto;
+	right: auto;
+	-webkit-box-shadow: 10px 10px 20px 0px rgba(66,64,64,1.00);
+	box-shadow: 10px 10px 20px 0px rgba(66,64,64,1.00);
+}
+
+/*@author Zuzana*/
+/*cabecera*/
+.logo
+{
+	display: inline-block;
+	width: 116px;
+	height: 116px;
+	margin-top: 10px;
+	float: left;
+	background-image: url(imagenes/logo.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: 15px;
+	
+}
+
+ .navbar 
+ {
+  border-radius: 5px;
+  float:left;
+   height: 116px; 
+   width:85%; 
+   background-color: #67A597;
+   margin-left: 5px;
+   margin-top:10px;
+   margin-right: 5px;
+ }
+
+  .boton 
+  {
+    color:#E6E6D5;
+    margin-top: 10px;
+    margin-left:5px;
+    font-family: Calibri;
+    font-size:10px;
+    font-weight: bold;
+    border-radius: 12px;
+  }
+  .usuario
+  {
+    margin-right: 9px;
+    float:right;
+  }
+
+/*menu*/
+  .mi-menu  {
+	list-style-type: none;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+	/* la altura y su ancho dependerán de los textos */
+	height: 40px;
+	width: 95%;
+	/* el color de fondo */
+	background: #E6E6D5;
+	background: -moz-linear-gradient(#E6E6D5);
+	background: -webkit-linear-gradient(#E6E6D5);
+	background: -o-linear-gradient(#E6E6D5);
+	background: -ms-linear-gradient(#E6E6D5);
+	//background: linear-gradient(#E6E6D5);
+	padding-bottom: 0;
+	padding-left: 10px;
+	padding-right: 0;
+	padding-top: 0;
+  }
+
+  .mi-menu  li {
+    display: block;
+    float: left; 
+    height: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .mi-menu li a {
+    color: #000000;
+    display: block;
+    font-family: Calibri;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 0 14px;
+    margin: 6px 0;
+    text-decoration: none;
+  }
+
+  .mi-menu li a:hover 
+  {
+    background-color: #FCFDFD;
+  } 
+
+  .mi-menu ul {
+
+    position: absolute;
+    top: 40px; 
+   
+  }
+
+   /* cada un ode los items de los submenús */
+  .mi-menu ul li {
+    height: 0; 
+    overflow: hidden;
+    padding: 0;
+    //width: inherit;
+  }
+  .mi-menu li:hover > ul li {
+    height: 36px;
+    overflow: visible;
+    padding: 0;
+    color:#FFFFFF;
+
+  }
+  .mi-menu ul li a:hover {
+    background-color:#C7DCCF;
+  }
+   .mi-menu ul li a {
+    background-color:#FFFFFF;
+    height: 36px;
+    width: 80px;
+  }
+
+    .mi-menu ul li ul li a{
+    background-color:#E6E6D5;
+    position: relative;
+    right:-68px;
+    height: 36px;
+    width: 80px;
+  }
+
+  .mi-menu ul li ul li a:hover {
+    background-color:#FFFFFF;
+  }
+
+  .mi-menu li:hover ul li ul {
+    display: none;
+  }
+  .mi-menu li:hover ul li:hover ul {
+    display: block;
+    top:0;
+
+  }
+  /*@author Olaia*/
+ /*cuerpo*/
+ #animacion{
+	float: right;
+	width: 400px;
+	height: 400px;
+	margin-right:100px;
+	margin-top:80px;
+	border-radius: 400px;
+	border: medium solid #FFFFFF;
+	background-image:url(imagenes/08_best-urban-hotels.jpg);	
+	transition:width 2s, height 2s, transform 2s;
+-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari */
+ }
+ #animation:hover{
+	transform:rotateY(180deg);
+-webkit-transform:rotateY(180deg); /* Safari */
+-moz-transform:rotateY(180deg);
+-ms-transform: rotateY(180deg);
+-o-transform: rotateY(180deg);
+transform:rotateY(180deg);
+ }
+ #resaltado{
+	width:75%;
+	background-color: #71B8B0;
+	border-radius: 10px;
+	border: 4px solid #FFFFFF;
+	color: white;
+	padding: 10px;
+        margin-top:70%;
+	margin-left:9%;
+	animation:myfirst 5s;
+	-webkit-animation:myfirst 5s; /* Safari and Chrome */
+ }
+@keyframes myfirst
+{
+	from {background:#E6E6D5;}
+to {background:#71B8B0;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	from {background:#E6E6D5;}
+to {background:#71B8B0;}
+}
+
+/*@author Olaia*/
+/*pie*/
+footer{
+	//position: absolute;
+        //position: float;
+        clear: both;
+	//width:75%;
+	height: 106px;
+	//padding-bottom: 40px;
+	//left:9.8%;
+	//width:88.7%;
+	//top:800px;
+	//margin: 0 auto;
+}
+
+#redes{
+	border-radius: 5px;
+	width: 120px;
+	height: 50px;
+	margin-left: 20px;
+	padding-top: 15px;
+	padding-left: 9px;
+	float: left;
+	background-color: rgba(187,183,171,1.00);
+}
+
+/*CSS3 filtro que comvierte las imagenes en escala de grises, solo funciona bien en chrome, firefox falla*/
+#redes img{
+	filter: url('#grayscale'); /* Versión SVG para IE10, Chrome 17, FF3.5, Safari 5.2 and Opera 11.6 */
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: grayscale(100%); /* Para cuando es estándar funcione en todos */
+filter: Gray(); /* IE4-8 and 9 */
+
+-webkit-transition: all 0.0s ease;
+-moz-transition: all 0.0s ease;
+-ms-transition: all 0.0s ease;
+-o-transition: all 0.0s ease;
+transition: all 0.0s ease;
+}
+/*Cuando pasa el raton por encima se elimina el filtro y se ve la imagen original*/
+#redes img:hover{
+	-webkit-filter: grayscale(0%);
+-moz-filter: grayscale(0%);
+-ms-filter: grayscale(0%);
+-o-filter: grayscale(0%);
+filter: none;
+
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+
+#info{
+	border-radius: 5px;
+	width: 83%;
+	height: 65px;
+	float: left;
+	background-color: rgba(187,183,171,1.00);
+	text-decoration: none;
+	color: white;
+	margin-left: 10px;
+}
+
+#info p{
+	float: left;
+	margin-left: 7%;
+	//margin-right: 70px;
+	font-weight: bold;
+	text-shadow: 5px 5px 5px rgba(101,115,112,1.00)
+}
+
+footer #info p a{
+	text-decoration:none;
+	color:white;
+}
+footer #info p a:hover{
+	text-decoration:none;
+	color: #67A597;
+}
+#centrado{
+	text-align: center;
+	
+}
+
+/*Burbujas: Autor Esther*/
+
+#burbuja1
+{
+width:80px;
+height:80px;
+border-radius:180px;
+background:LightBlue;
+position:relative;
+animation:burbuja1 10s ;
+animation-direction:alternate;
+-webkit-transition-delay:3s;
+transition-delay:3s;
+/* Safari and Chrome */
+-webkit-animation:burbuja1 10s ;
+-webkit-animation-direction:alternate;
+-webkit-animation-fill-mode:forwards; 
+}
+
+/*Movimientos y cambios de tamaño*/
+@keyframes burbuja1
+{
+0%{background:LightBlue; left:0px; top:0px;}
+25%  {background:PaleTurquoise; left:200px; top:400px;-webkit-transform:scale(1);}
+50%  {background:PaleTurquoise; left:300px; top:450px;-webkit-transform:scale(0.75);}
+50%  {background:PaleTurquoise; left:400px; top:650px;-webkit-transform:scale(0.50);}
+100%  {background: border: 3px solid white;; left:500px; top:400px;-webkit-transform:scale(0.25);}
+
+}
+
+@-webkit-keyframes burbuja1 /* Safari and Chrome */
+{
+0%   {background:LightBlue; left:0px; top:0px;}
+25%  {background:PaleTurquoise; left:200px; top:400px;-webkit-transform:scale(1);}
+50%  {background:PaleTurquoise; left:300px; top:450px;-webkit-transform:scale(0.75);}
+50%  {background:PaleTurquoise; left:400px; top:650px;-webkit-transform:scale(0.50);}
+100%  {background:DarkSeaGreen; left:500px; top:400px;-webkit-transform:scale(0.25);}
+}
+
+#burbuja2
+{
+width:60px;
+height:60px;
+border-radius:180px;
+background:LightBlue;
+position:relative;
+animation:burbuja2 10s ;
+animation-direction:alternate;
+/* Safari and Chrome */
+-webkit-animation:burbuja2 10s ;
+-webkit-animation-direction:alternate;
+}
+/*Movimientos y cambios de color*/
+@keyframes burbuja2
+{
+0%   {background:white; left:0px; top:0px;}
+10%   {background:LightBlue; left:0px; top:0px;}
+25%  {background:PaleTurquoise; left:200px; top:100px;}
+50%  {background:DarkSeaGreen; left:300px; top:200px;}
+75%  {background:CadetBlue; left:0px; top:100px;}
+90% {background:LightBlue; left:0px; top:100px;}
+100%   {background:white; left:0px; top:0px;}
+}
+@-webkit-keyframes burbuja2 /* Safari and Chrome */
+{
+0%   {background:white; left:0px; top:0px;}
+10%   {background:LightBlue; left:0px; top:0px;}
+25%  {background:PaleTurquoise; left:200px; top:100px;}
+50%  {background:DarkSeaGreen; left:500px; top:200px;}
+75%  {background:CadetBlue; left:0px; top:100px;}
+90% {background:LightBlue; left:0px; top:100px;}
+100%   {background:white; left:0px; top:0px;}
+}
+
+#burbuja3{
+background:CadetBlue;
+width:50px;
+height:50px;
+border-radius:180px;
+-webkit-animation-fill-mode:forwards; 
+}
+		/*Efecto al pasar el ratón*/
+		#burbuja3:hover{
+		width:100px;
+		height:100px;
+		border-radius:180px;
+		border: 3px solid  PaleTurquoise;
+		transform: scale(1.1,1);
+		-ms-transform: scale(1.1,1); /* IE 9 */
+		-webkit-transform: scale(1.1,1); /* Safari and Chrome */
+		}
+
+#circulo4 {
+ position:absolute; border: 5px solid #5F9EA0;
+ border-radius:180px;
+ width: 150px;
+ background-color: #5F9EA0;
+ opacity: 0.5;
+ height: 150px;
+ -webkit-animation: circulo4 10s  linear;
+ -moz-animation: circulo4 10s  linear;
+ animation: circulo4 10s linear;
+}
+/*Movimientos*/
+@-moz-keyframes circulo4 {
+    0%  {left:-100px; bottom:200px;}
+    100%    {left:650px;bottom:500px;}
+}
+@-webkit-keyframes circulo4 {
+    0%  {left:-100px; bottom:200px;}
+    100%    {left:650px;bottom:500px;}
+}
+
+#circulo5 {
+ position:relative;
+ border: 5px solid #5F9EA0;
+ border-radius:180px;
+ width: 150px;
+ background: linear-gradient(#C7DCCF, #2E7566);
+ height: 150px;
+ -webkit-animation: circulo5 10s;
+ -moz-animation: circulo5 10s;
+ animation: circulo5 10s;
+ 
+-webkit-animation-fill-mode:forwards; 
+}
+/*Movimientos*/
+@-moz-keyframes circulo5 {
+    0%      {left:-100px; top:0px}
+	50%      {left:100px; top: 600px;}
+	75%     {left:100px; top:200px;}
+    100%    {left:650px; top: 100px;}
+}
+@-webkit-keyframes circulo5 {
+    0%    {left:-100px; top:0px}
+	50%     {left:100px; top: 600px;}
+	75%     {left:100px; top: 200px;}
+    100%    {left:650px; top: 100px;}
+}
+
+#circulo3 {
+ border: 5px solid #5F9EA0;
+ border-radius:180px;
+ width: 50px;
+ background-color: #5F9EA0;
+ height: 50px;
+ opacity: 0.5;
+ -webkit-animation: circulo3 20s infinite linear;
+ -moz-animation: circulo3 20s infinite linear;
+ animation: circulo3 20s infinite linear;
+ -webkit-animation-fill-mode:forwards; 
+}
+ /*Movimientos y cambios de tamaño*/
+@-webkit-keyframes circulo3 {
+  0%  {right:-30px;top:70px;-webkit-transform:scale(1);}
+  100%    {right:780px;top:20px;-webkit-transform:scale(0.1);}
+}
+@-moz-keyframes circulo3 {
+  0%  {right:-30px;top:70px;-moz-transform:scale(1);}
+ 100%    {right:780px;top:20px;-moz-transform:scale(0.1);}
+}
+
+ #circulo1{
+ border: 5px solid #5F9EA0;
+ border-radius:180px;
+ width: 150px;
+ background-color: #5F9EA0;
+ height: 150px;
+-moz-animation:  circulo1  13s linear;
+-webkit-animation: circulo1 13s linear; /* Safari and Chrome */
+-webkit-animation-fill-mode:forwards; 
+ }
+ 
+ /*Movimientos y cambios de color*/
+ @keyframes circulo1{
+0%   {background: #2E7566; left:0px; top:0px;}
+25%  {background: #C7DCCF; left:200px; top:0px;}
+50%  {background:  #5F9EA0; left:0px; top:200px;}
+100% {background: #2E7566; left:0px; top:0px;}
+}
+
+
+
+@-webkit-keyframes circulo1 /* Safari and Chrome */
+{
+0%   {background: #2E7566; left:0px; top:0px;}
+25%  {background: #C7DCCF; left:200px; top:0px;}
+50%  {background: #5F9EA0; left:0px; top:200px;}
+100% {background: #2E7566; left:0px; top:0px;}
+}
+
+ #circulo2{
+ border: 3px solid #2E7566;
+ border-radius:180px;
+ width: 30px;
+ background-color: #C7DCCF;
+ height: 30px;
+ }
+		/*Efecto al pasar el ratón*/
+		 #circulo2:hover{
+		 border: 5px solid #C7DCCF;
+		 border-radius:180px;
+		 width: 30px;
+		 background-color: LightSteelBlue;
+		 height: 30px;
+		 }
+
+ #creservas{
+ border: 5px solid black;
+ border-radius:180px;
+ width: 120px;
+ height: 120px;
+ background-color: black;
+ }
+  
+ /*Este div agrupa los elementos que forman la sección de reservas que se repiten en cada página*/
+#burbujagrande{
+position:absolute;
+left:20%;
+bottom:30%;
+width:90%;
+border: 3px solid #2E7566;
+border-radius:180px;
+width: 250px;
+height: 250px;
+background:linear-gradient(#C7DCCF, #2E7566); 
+opacity: 0.65;
+}
+ 
+#reservar{
+font-family: Calibri;
+font-size:20px;
+color: white;
+font-weight: bold;
+border: 3px solid white;
+border-radius:180px;
+width: 120px;
+height: 120px;
+background-color: #E6E6D5;
+position:relative;
+left:70%;
+bottom:20%;
+}
+/*Efecto al pasar el ratón por encima*/		 
+#reservar:hover{
+font-family: Calibri;
+font-size:30px;
+color: white;
+font-weight: bold;
+border: 5px solid white;
+border-radius:180px;
+width: 120px;
+height: 120px;
+background-color: #E6E6D5;
+position:relative;
+left:70%;
+bottom:20%;
+}
+
+ /*Todos los textos de las burbujas tienen el mismo estilo, como solo son tres se dejan como id, no como class*/
+ #texto{
+font-family: Calibri;
+font-size:15px;
+color: white;
+font-weight: bold;
+}
+
+/*Es el desplegable que permite elegir el número de noches*/
+#select{
+position:absolute;
+left:50%;
+width:30px;
+}
+/*Con este div situamos una parte de las burbujas jubto con todos sus movimientos y trnasformaciones, más  a la derecha*/	
+#grupo1{
+position:absolute;
+right:20%;
+bottom:45%;
+}
+/*Este div contiene todos los elementos de burbujas, para centratlos y evitar que descoloquen al resto de elementos y de divs de la página*/
+#circulos{
+position:absolute;
+right:80%;
+top:25%;
+}
+
+#contacto{
+position:absolute;
+left:50%;
+top:30%;
+}
+
+
+/*Este div es el del mensaje que salta cuando enviamos el formulario de contacto*/
+#mensaje{
+font: Calibri;
+font-size:20px;
+color: Tan;
+position: absolute; left:500px; top:300px;
+ border: 5px solid white;
+ border-radius:40px;
+ width: 600px;
+ background-color: Linen;
+ height: 150px;
+
+-webkit-animation-fill-mode:forwards;  /* Safari and Chrome */
+-moz-animation:  mensaje  8s ;
+-webkit-animation: mensaje 8s; /* Safari and Chrome */
+ }
+ 
+
+ 
+ /*Movimientos y cambios de color*/
+ @keyframes mensaje{
+ 
+from {left:0px; top:300px;}
+to { left:500px; top:300px;}
+}
+
+
+/* Safari and Chrome */
+@-webkit-keyframes mensaje {
+ 
+from {left:0px; top:300px;}
+to { left:500px; top:300px;}
+}
+
+
+
+
+
+/*habitaciones.html : Autor Zuzana*/
+
+.suite img {
+   
+   float: right;
+   border-radius: 5px;
+   width: 280px;
+   height: 140px;
+   padding-right: 150px;
+   padding-top: 20px;
+   
+}
+
+.tripleDoble img {
+   
+   float: right;
+   width: 230px;
+   height: 120px;
+  padding-right: 40px;
+   padding-top: 10px;
+   
+}
+
+#cuerpoDerecha
+{
+	width: 60%;
+	height:350px;
+	float: right;
+}
+
+#cuerpoIzquierda
+{
+	float:left;
+	width: 40%;
+	height:350px;
+}
+
+.tripleDoble img:hover {
+	width: 300px;
+	height: 200px;
+}
+
+.suite img:hover {
+	width: 300px;
+	height: 200px;
+}
+
+.derecha{
+    float: right;
+    width: 25%;
+}
+.derecha40{
+    float: right;
+    width: 40%;
+}
+.centro{
+    float: right;
+    width: 50%;
+}
+
+.izquierdo{
+    float: left;
+    width: 50%;
+}
+.izquierdo1_3{
+    float: left;
+    width: 30%;
+}
+.izquierdo2_3{
+    float: left;
+    width: 60%;
+}
+.margen_izquierdo{
+    margin-left: 8%;
+}
+.titulohotel{
+    font-size: 36px;
+    margin-bottom: 1.5%;
+    
+}
+.division{
+    border-top: 2px solid #67A597;
+}
+.cuerpo{
+    clear: both;
+    margin-left: 2%;
+    margin-right: 5%;
+    padding: 1%;
+}
+#dialogoemergente{
+background: white;
+border: solid 3px white;
+color: white;
+border-radius:12px;
+font-size: 14px;
+font-family: calibri;
+margin: 5px;
+}
+#shake{
+border: 3px solid #2E7566;
+border-radius:50px;
+width: 350px;
+height: 200px;
+background:linear-gradient(#C7DCCF, #2E7566); 
+opacity: 0.65;
+padding: 1.75%;
+}
+
+.ui-dialog-titlebar {
+    color:white;
+    border: black;
+    background: grey;
+    border-radius:12px;
+}
+
+.ui-corner-all{
+    border:solid white 2px;
+
+}
+#errores{
+color: cadetblue;
+font-size: 16px;
+font-family: calibri;
+}
+
+#drop {
+border: 3px solid #2E7566;
+border-radius:50px;
+width: 400px;
+height: 300px;
+background:linear-gradient(#C7DCCF, #2E7566); 
+opacity: 0.65;
+padding: 2%;
+}
