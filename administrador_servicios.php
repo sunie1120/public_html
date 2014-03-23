@@ -67,18 +67,24 @@
     <div>
         <div class="izquierdo">
             <p id="p" class="margen_izquierdo"><b><?php echo "Bienvenido ".@$_SESSION['user'];?></b></p>  
-            <p class="margen_izquierdo">Servicio:
-            <select name="habitacion">
-           <option selected="selected">disponibles</option><!--para actualizar los datos del cliente añadir un if-->
-           <?php
-                include ('funcions_bdd.php');
-                $servicios=servicios();
-                for ($i=0;$i<count($servicios);$i++)
-                {
-                    echo "<option>".$servicios['$i']."</option>";
-                }
-           ?>
-   </select></p>
+            
+            <form action="#" method="get">
+                <p class="margen_izquierdo">Servicio:
+                    <select name="servicio">
+                        <option selected="selected">elige una opción</option><!--para actualizar los datos del cliente añadir un if-->
+                        <?php
+                             include ('funcions_bdd.php');
+                             $servicios=servicios();
+                             for ($i=0;$i<count($servicios);$i++)
+                             {
+                                 echo $servicios['$i'];
+                             }
+                        ?>
+                    </select>
+                    <input type="submit" name="submit" value="Buscar" />
+                </p>
+              </form>
+
         </div>
         <div class="derecha">
             <p id="fechahoy"></p>
@@ -86,21 +92,27 @@
         </div>
     </div>
     <div class="cuerpo division">
-        <div class="izquierdo2_3" id="listado_personas">
-            <?php
-                $hoy=date("Y-m-d");
-                llistar_reserves_dia_js($hoy);
-            ?>
-
+        <div class="izquierdo izquierdo2_3">
+            <ul id="servicios">
+                <?php
+                    $hoy=date("Y-m-d");
+                    @$servicio=$_GET['servicio'];
+                    llistar_reserves_dia_js($hoy,$servicio);
+                ?>
+            </ul>
         </div>
         <div class="derecha40">
-            <div id="drop">
-                
-
-            </div>
-            <div id="resultado">
+            <div id="Realizados" class="ui-widget-content">
+                <h1 class="ui-widget-header">Servicios Realizados</h1>
+                <div>
+                <ul>
+                <li class="placeholder">Arrastra hasta aquí los servicios realizados</li>
+                </ul>
+           </div>
+            <div id="resultado" class="ui-widget-content">
                 <?php
-                    total_servicios_hoy($hoy);
+                    $servicio=$_GET['servicio'];
+                    total_servicios_hoy($hoy,$servicio);
                 ?>
             </div>
         </div>
