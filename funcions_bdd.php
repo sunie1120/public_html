@@ -1531,8 +1531,8 @@ function total_servicios_hoy($hoy,$servicio){/*LISTA LAS RESERVAS DEL DÍA INDIC
         $sql = "SELECT hora_inici, nom_complert FROM `reserva` natural join franja join client ON ( dni_client = dni ) WHERE `data` = '$hoy' AND `id_servei` = '$servicio' AND `realitzat` =1";
 	$consulta_reserva=mysql_query($sql,$conex);
         $realizados=mysql_num_rows($consulta_reserva);
-        echo"<p class=\"margen_izquierdo\">Servicios Realizados hoy: <b>".$realizados."</b></p>";
-        echo"<p class=\"margen_izquierdo\">Servicios Pendientes para hoy: <b>".$pendientes."</b></p>";
+        echo"<p>Servicios Realizados hoy: <b>".$realizados."</b></p>";
+        echo"<p>Servicios Pendientes para hoy: <b>".$pendientes."</b></p>";
 	mysql_close($conex);
 
 

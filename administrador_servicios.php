@@ -20,7 +20,7 @@
 <div class="navbar">
     <div class="boton derecha">
          <form id="formulario" action="cerrar_sesion.php" method="post" class="centro">
-            <input type="submit" value="Tancar sessió" name="tancar_ses"></input>
+            <input type="submit" value="Cerrar Sesión" name="tancar_ses"></input>
         </form>
      </div>
     <h1 class="boton titulohotel ">Hotel Joan d'Austria</h1>
@@ -103,7 +103,7 @@
         </div>
         <div class="derecha40">
             <div id="Realizados" class="ui-widget-content">
-                <h1 class="ui-widget-header">Servicios Realizados</h1>
+                <h1 class="ui-widget-header"><center>Servicios Realizados</center></h1>
                 <div>
                 <ul>
                 <?php
@@ -113,14 +113,16 @@
                 </ul>
            </div>
         </div>
-        <div id="resultado" class="ui-widget-content">
+            
+    </div>
+        <div id="resultado" class="cuerpo">
+           <h4 class="ui-widget-header"><center>Computo de los servicios</center></h5>
             <?php
                 @$servicio=$_GET['servicio'];
                 total_servicios_hoy($hoy,$servicio);
             ?>
+                
         </div>
-    </div>
-    
         
         
               

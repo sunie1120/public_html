@@ -762,11 +762,12 @@ color: cadetblue;
 font-size: 16px;
 font-family: calibri;
 }
-
 #resultado{
-    background-color: #eee;
-    border: 1px solid gainsboro;
-    width: 100%;
+    margin-left: 59%;
+    margin-right: 0%;
+    margin-top: 26%;
+    border: solid 1px #aaa;
+    background-color: white;
 }
 
 #servicios li {
