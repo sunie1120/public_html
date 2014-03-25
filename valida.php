@@ -41,7 +41,7 @@ if($error_login==0) {
 	header('Location: controlador_alta_servicios.php');
 	break;
 	case 'RS':
-	header('Location: gestio_serveis.php');
+	header('Location: administrador_servicios.php');
 	break;
 	case 'C':
 	@$id_usuario=buscar('id','usuaris','user_name',$user);  //saco el id de usuario qu enecesito para sacar el dni	        	  

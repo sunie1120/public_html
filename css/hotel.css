@@ -763,12 +763,16 @@ font-size: 16px;
 font-family: calibri;
 }
 
-#drop {
-border: 3px solid #2E7566;
-border-radius:50px;
-width: 400px;
-height: 300px;
-background:linear-gradient(#C7DCCF, #2E7566); 
-opacity: 0.65;
-padding: 2%;
+#resultado{
+    background-color: #eee;
+    border: 1px solid gainsboro;
+    width: 100%;
 }
+
+#servicios li {
+   list-style:none;
+   float: left; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center;    
+}
+
+#Realizados { float: right; width: 100%; min-height: 18em; padding: 1%; }
+

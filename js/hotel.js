@@ -64,20 +64,37 @@ $("#fechahoy").innerHTML =  diasSemana[fecha.getDay()] + ", " + fecha.getDate() 
 $("#hora").innerHTML = "Son las "+fecha.getHours()+':'+fecha.getMinutes();
 });
 /**
- * Drag
+ * Drag&Drop
  */
+contar=0;
 $(function() {
-$(".personas").draggable();
+    $( "#servicios li" ).draggable();
+    $( "#Realizados" ).droppable({
+        accept: "#servicios li",
+        drop: function( event, ui ) {
+            //$( this ).find( ".placeholder" ).remove();
+            //$( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
+            $("#eliminar_servicios").submit();
+            $(ui.draggable).remove();
+            /*contar=contar+1;
+            $("#resultado").html("Hay "+contar+" servicios realizados");*/
+        }/*,
+        out: function( event, ui ) {
+            $(ui.draggable).css({color: "#000000"});
+            contar=contar-1;
+            if (contar == 0)
+            {
+                $("#resultado").html("No hay servicios realizados");
+            }
+        }*/
+    })/*.sortable({
+        items: "li:not(.placeholder)",
+        sort: function() {
+            // gets added unintentionally by droppable interacting with sortable
+            // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+            $( this ).removeClass( "ui-state-default" );
+        }
+    })*/;
 });
-/**
- * Drop
- */
-$(function() {
-    $(".personas").draggable(dragOpts);
-    var dropOpts = {
-    drop: function( event, ui ) {
-        $("#drop").innerHTML ="<img src=\"imagenes/gota.png\" width=\"268\" height=\"225\" alt=\"gota\"/><p class=\"derecha\">Servicios Finalizado</p>";
-    }
-    };
-    $("#drop").droppable();
-});
+
+

@@ -337,6 +337,29 @@ function habitaciones_libres()
     mysql_close();
    
 }
+
+/**
+ * Especificacion: Funcion lista los servicios disponibles
+ * Funcion lista los servicios disponibles y devuelve el codigo html
+ * para imprimir de las opciones de un input select
+ * @return string (codigo html para imprimir de las opciones de un input select)
+ * 
+ * @author Olaia
+ * @version 1
+ * @copyright 
+ */
+function servicios()
+{
+    $conex=conectar_bdd();
+    $sql="SELECT * from servei";
+    $resultado=  mysql_query($sql);
+    while ($row=  mysql_fetch_array($resultado))
+    {
+        echo "<option value=".$row['id_servei'].">".$row['nom_servei']."</option>";
+    }
+    mysql_close();
+   
+}
 /* -----------------------------------------------funciones reservas_cliente ------------------------------------------------------*/
   /**  Autor: Zuzana Vadaszova
    * Fecha: 21.12.2013
@@ -834,7 +857,7 @@ function comprobar_reserva($data,$id_servei){
 * @author Esther Herrero
 * @version 1
 */
- 
+
  function llistar_serveis(){
  /*echo "Entra en llistar serveis";*/
  $conex=conectar_bdd();
@@ -1422,11 +1445,10 @@ function anyadeclass($nuevaid_class,$nuevonombre,$imagen){
 }
 
 
-function llistar_reserves_dia_js($hoy){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
+function llistar_reserves_dia_js($hoy,$servicio){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
  
    	$conex=conectar_bdd();
-        $servicio='07';
-	$sql = "SELECT hora_inici, nom_complert FROM `reserva` natural join franja join client ON ( dni_client = dni ) WHERE `data` = '$hoy' AND `id_servei` = '$servicio' AND `realitzat` =0";
+	$sql = "SELECT * FROM `reserva` natural join franja join client ON ( dni_client = dni ) WHERE `data` = '$hoy' AND `id_servei` = '$servicio' AND `realitzat` =0";
 	$consulta_reserva=mysql_query($sql,$conex);
 	
 		$filas=mysql_num_rows($consulta_reserva);
@@ -1443,15 +1465,18 @@ function llistar_reserves_dia_js($hoy){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
 											
 	$hora=$fila['hora_inici'];
 	$nombre=$fila['nom_complert'];
-	
-
+	$dni_client=$fila['dni_client'];
+        $id_franja=$fila['id_franja'];
+        $servicio=$fila['id_servei'];
+        
 	if($realitzat=0){/*no esta realizado*/
 	   $no_realizado="Si";
 	}else{$no_realizado="No";}
 
-        echo "<div class=\"izquierdo1_3 personas\"><img src=\"imagenes/persona.jpg\" width=\"200\" height=\"116\" alt=\"persona\"/><p width=\"200\">".$hora." ".$nombre."</p></div>";
+        echo "<li \"><h5 class=\"ui-widget-header\">$hora $nombre</h5><img src=\"imagenes/persona.jpg\" alt=\"usuario $nombre\" width=\"200\" height=\"116\" alt=\"persona\"/></li>";
+        echo '<form action="eliminar_servicios.php" method="post" name="valida" id="eliminar_servicios"><input type="hidden" name="id_fraja" value="' . $id_franja . '" /><input type="hidden" name="dni" value="' . $dni_client . '" /><input type="hidden" name="servicio" value="' . $servicio . '" /></form>';
         
-	}
+        }
 										
 	}
 
@@ -1459,11 +1484,46 @@ function llistar_reserves_dia_js($hoy){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
 
 
 }
-function total_servicios_hoy($hoy){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
+function llistar_reserves_dia_realizados($hoy,$servicio){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
  
    	$conex=conectar_bdd();
-        $servicio='07';
-	//Total de pendientes
+	$sql = "SELECT * FROM `reserva` natural join franja join client ON ( dni_client = dni ) WHERE `data` = '$hoy' AND `id_servei` = '$servicio' AND `realitzat` =1";
+	$consulta_reserva=mysql_query($sql,$conex);
+	
+		$filas=mysql_num_rows($consulta_reserva);
+		
+		if($filas<1){
+				echo "Arrastra hasta aquí los servicios realizados";
+				
+		}
+
+	else{
+									
+			while($fila=mysql_fetch_array($consulta_reserva, MYSQL_ASSOC)){
+										
+											
+	$hora=$fila['hora_inici'];
+	$nombre=$fila['nom_complert'];
+	
+        
+	if($realitzat=0){/*no esta realizado*/
+	   $no_realizado="Si";
+	}else{$no_realizado="No";}
+
+        echo "<li \"><img src=\"imagenes/persona.jpg\" alt=\"usuario $nombre\" width=\"50\" height=\"29\" alt=\"persona\"/>$hora $nombre</li>";
+       
+        }
+										
+	}
+
+	mysql_close($conex);
+
+
+}
+function total_servicios_hoy($hoy,$servicio){/*LISTA LAS RESERVAS DEL DÍA INDICADO*/
+ 
+   	$conex=conectar_bdd();
+        //Total de pendientes
         $sql = "SELECT hora_inici, nom_complert FROM `reserva` natural join franja join client ON ( dni_client = dni ) WHERE `data` = '$hoy' AND `id_servei` = '$servicio' AND `realitzat` =0";
 	$consulta_reserva=mysql_query($sql,$conex);
         $pendientes=mysql_num_rows($consulta_reserva);
@@ -1715,5 +1775,13 @@ function modifica_realizado($franja,$data){
 	mysql_close($conex);
 
 	return $msn;
+}
+
+function servicio_realizado($sql){
+   	$conex=conectar_bdd();
+	$resultado=mysql_query($sql,$conex);
+        echo "error sentencia ". mysql_error();
+        mysql_close($conex);
+
 }
 ?>

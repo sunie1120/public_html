@@ -106,19 +106,24 @@
                 <h1 class="ui-widget-header">Servicios Realizados</h1>
                 <div>
                 <ul>
-                <li class="placeholder">Arrastra hasta aquí los servicios realizados</li>
+                <?php
+                    @$servicio=$_GET['servicio'];
+                    llistar_reserves_dia_realizados($hoy,$servicio);
+                ?>
                 </ul>
            </div>
-            <div id="resultado" class="ui-widget-content">
-                <?php
-                    $servicio=$_GET['servicio'];
-                    total_servicios_hoy($hoy,$servicio);
-                ?>
-            </div>
+        </div>
+        <div id="resultado" class="ui-widget-content">
+            <?php
+                @$servicio=$_GET['servicio'];
+                total_servicios_hoy($hoy,$servicio);
+            ?>
         </div>
     </div>
     
-    
+        
+        
+              
     
     
 </section>
